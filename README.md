@@ -3,10 +3,10 @@
   cards, and many different card themes!
 
 ## NOTE
-  - Graphics Library used: AWT
-  - Developed and tested on Windows 10 and 11, 64-bit
+  - Graphics Library used: Swing.
+  - Developed and tested on Windows 10 and 11, 64-bit.
   - You can launch Concentration.exe to play the game.
-  - Icons by [Icons8](https://icons8.com/)
+  - Icons by [Icons8](https://icons8.com/).
 
 ## AUTHORS
   - Nam Do, namdo1225
