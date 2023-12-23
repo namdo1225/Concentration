@@ -14,6 +14,7 @@
 package frontend;
 
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -21,6 +22,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.net.URI;
 import java.awt.event.ActionEvent;
 
 public class MainScreen extends Screen {
@@ -30,6 +34,8 @@ public class MainScreen extends Screen {
 	private JLabel title = new JLabel("Concentration");  
     private JTextArea winner = new JTextArea("Winner: No games played yet.");	
 	
+	private JLabel infoText = new JLabel("Icons by Icons8 (click here).");
+
     /*
      * Constructor for the MainScreen class.
      */
@@ -40,7 +46,7 @@ public class MainScreen extends Screen {
 	}
 	
 	protected void addPanel() {
-		Component comps[] = new Component[]{title, start, exit, winner, update};
+		Component comps[] = new Component[]{title, start, exit, winner, update, infoText};
 		for (Component comp : comps)
 			panel.add(comp);
 	}
@@ -60,6 +66,8 @@ public class MainScreen extends Screen {
 		update.setBounds(450, 350, 250, 40);
 		update.setText("Update latest game's winner");
 
+		infoText.setBounds(500, 420, 250, 20);
+		infoText.setFont(new Font("Arial", Font.PLAIN, 12));
 	}
 	
 	protected void setEvents() {
@@ -74,6 +82,37 @@ public class MainScreen extends Screen {
 	    			if (!screenOutput.equals("0"))
 	    				winner.setText(screenOutput);
 	    			}
-	    	    });  
+	    	    });
+		
+		infoText.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent event) {
+			    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+			    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+			        try {
+			            desktop.browse(new URI("https://icons8.com"));
+			        } catch (Exception e) {
+			            e.printStackTrace();
+			        }
+			    }
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			
+		});
 	}
 }
