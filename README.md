@@ -1,6 +1,5 @@
 # Concentration
-  - Have you played a game of Concentration or Matching? Well, with my program, you can now play it on my computer. You can choose between many number of players, many number of
-  cards, and many different card themes!
+  - Have you played a game of concentration or matching? Well, with my program, you can now play it on my computer. You can choose between a large number of players, a large number of cards, and many different card themes!
 
 ## NOTE
   - Graphics Library used: Swing.
